@@ -1,8 +1,8 @@
 import React from 'react'
 import{ Helmet } from 'react-helmet';
 //import AddContact from '../components/contactManager/insert/AddContact';
-import AddContact from '../components/contactManager/insert/AddContact_ref';
-
+//import AddContact from '../components/contactManager/insert/AddContact_ref';
+import AddContact from '../components/contactManager/insert/AddContact_rdf';
 
 const header = () =>{
   return (

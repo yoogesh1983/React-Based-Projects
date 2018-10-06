@@ -56,12 +56,8 @@ class EditContact extends Component {
 
   render()
   {
-   // const {name, phone, email, errors} = this.state;
-    const name = "Leanne Graham";
-    const phone = "1-770-736-8031 x56442";
-    const email = "Sincere@april.biz"
-    const errors = {};
-    
+    const {name, phone, email, errors} = this.state;
+
     return (
     <div className="card mb-5">
       <div className="card-header">Edit Id: [{this.props.match.params.id}]</div>

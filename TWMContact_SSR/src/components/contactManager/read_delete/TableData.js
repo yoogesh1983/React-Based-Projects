@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash'
 import Contact from './Contact';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -14,10 +15,19 @@ componentDidMount(){
     this.props.getAllContactAction();
 }
 
+renderContactLists(contact) {
+    return (<Contact key={contact.id} contact={contact} />); // renderContactLists = contact => <Contact key={contact.id} contact={contact} />;
+  }
+  
 
 render(){
-    const {contacts} = this.props; 
-    return (<div>{contacts.map(contact => (<Contact key={contact.id} contact={contact} />))}</div>);
+    const contactsObject = this.props.contacts;
+    const contactsArray = _.map(contactsObject);
+
+    const contactList = contactsArray.map(this.renderContactLists);
+    //const contactList = contactsArray.map(contact => <Contact key={contact.id} contact={contact} />);  -- Or you can do like this
+    
+    return (<div>{contactList}</div>);
  }; 
 
 } 
