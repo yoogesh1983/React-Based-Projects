@@ -1,0 +1,7 @@
+build
+node_modules
+public
+.idea
+.project
+.settings
+package-lock.json
