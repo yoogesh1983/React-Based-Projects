@@ -8,9 +8,8 @@ export const getAllContactAction = () => async (dispatch, getState, api) => {
     try
     {
         const url = '/users';
-        //const res = await api.get(url);
-        const res = dummy_getAllContacts();
-
+        const res = await api.get(url);       //const res = dummy_getAllContacts();
+        
         dispatch({
             type: GET_CONTACTS,
             payload: res.data,
@@ -31,8 +30,7 @@ export const getContactAction = id => async (dispatch, getState, api) => {
     try
     {
         const url = `/users/${id}`;
-        //const res = await api.get(url);
-        const res = dummy_getContact();
+        const res = await api.get(url);        //const res = dummy_getContact();
         dispatch({
             type: GET_CONTACT,
             payload: res.data
