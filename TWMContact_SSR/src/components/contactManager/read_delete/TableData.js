@@ -33,7 +33,7 @@ render(){
 } 
 
 TableData.propTypes = {
-    contacts: PropTypes.array.isRequired,
+    contacts: PropTypes.object.isRequired,
     getAllContactAction: PropTypes.func.isRequired
 }
 
