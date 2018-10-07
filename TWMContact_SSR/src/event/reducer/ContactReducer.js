@@ -4,7 +4,8 @@ import _ from 'lodash'
 const initialState = {       
     contacts: {},          // contacts: [], 
     currentContact:{},
-    dynamicId:{}
+    dynamicId:{},
+    isAuthenticated: true
 };
 
 export default function(state = initialState, action){

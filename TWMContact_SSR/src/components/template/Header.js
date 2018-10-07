@@ -11,7 +11,7 @@ class Header extends Component{
   }
 
   render(){
-    const { branding, dynamicId} = this.props;
+    const { branding, dynamicId, isUserLoggedIn} = this.props;
     const { disableBalanceOnAdd, disableBalanceOnEdit, allowRegistration } = this.props.settings;
     const { routes } = this.props.route;
 
@@ -29,6 +29,15 @@ class Header extends Component{
                   <i className="fas fa-home" /> Home
                 </Link>
               </li>
+              
+              <li className="nav-item">
+                <a href="#" className="nav-link" onClick={() => {console.log('Click event occured from header component');}}>
+                    <i className={ `fas  ${ isUserLoggedIn ? 'fa-sign-out-alt' : 'fa-sign-in-alt' }` }
+                    /> { isUserLoggedIn ? 'Sign-Out' : 'Sign-In' }
+                </a>
+              </li>
+              
+
               <li className="nav-item">
                 <Link to="/contact/add" className="nav-link">
                   <i className="fas fa-plus" /> Add
@@ -68,6 +77,7 @@ Header.propTypes = {
 
 const mapStateToProps = (state) => ({
   dynamicId: state.twm_contact.dynamicId,
+  isUserLoggedIn: state.twm_contact.isAuthenticated,
   settings: state.twm_setting
 });
 
