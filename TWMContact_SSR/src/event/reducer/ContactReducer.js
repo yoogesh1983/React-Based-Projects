@@ -1,11 +1,11 @@
-import {GET_CONTACTS, DELETE_CONTACT, EDIT_CONTACT, ADD_CONTACT, GET_CONTACT } from '../../event/Types';
+import {GET_CONTACTS, DELETE_CONTACT, EDIT_CONTACT, ADD_CONTACT, GET_CONTACT, TOGGLE_LOGIN } from '../../event/Types';
 import _ from 'lodash'
 
 const initialState = {       
     contacts: {},          // contacts: [], 
     currentContact:{},
     dynamicId:{},
-    isAuthenticated: true
+    isAuthenticated: false
 };
 
 export default function(state = initialState, action){
@@ -45,6 +45,13 @@ export default function(state = initialState, action){
                ...state,
               // contacts: state.contacts.map(contact => contact.id == action.payload.id ? (contact = action.payload) : contact) 
                contacts: {...state.contacts, [action.payload.id]:action.payload}
+        };
+
+
+        case TOGGLE_LOGIN:
+        return {
+          ...state,
+          isAuthenticated: !state.isAuthenticated
         };
 
         default:

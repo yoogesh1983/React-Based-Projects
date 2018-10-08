@@ -1,6 +1,6 @@
 import axios from 'axios';
 import uuid  from 'uuid';
-import {GET_CONTACTS, GET_CONTACT, ADD_CONTACT, EDIT_CONTACT, DELETE_CONTACT } from '../Types';
+import {GET_CONTACTS, GET_CONTACT, ADD_CONTACT, EDIT_CONTACT, DELETE_CONTACT, TOGGLE_LOGIN } from '../Types';
 
 
 export const getAllContactAction = () => async (dispatch, getState, api) => {
@@ -131,6 +131,12 @@ export const getContactAction = id => async (dispatch, getState, api) => {
     }
  };
 
+
+ export const toggleLoginAction = () => {
+    return {
+      type: TOGGLE_LOGIN
+    };
+  };
 
 
 

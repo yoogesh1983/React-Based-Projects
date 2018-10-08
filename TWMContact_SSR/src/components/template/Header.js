@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { renderRoutes } from 'react-router-config';
+import { toggleLoginAction } from '../../event/action/ContactAction';
 
 class Header extends Component{
 
   constructor(props){
     super(props);
   }
+
 
   render(){
     const { branding, dynamicId, isUserLoggedIn} = this.props;
@@ -31,7 +33,7 @@ class Header extends Component{
               </li>
               
               <li className="nav-item">
-                <a href="#" className="nav-link" onClick={() => {console.log('Click event occured from header component');}}>
+                <a href="#" className="nav-link" onClick={ this.props.toggleLoginAction.bind(this) }>
                     <i className={ `fas  ${ isUserLoggedIn ? 'fa-sign-out-alt' : 'fa-sign-in-alt' }` }
                     /> { isUserLoggedIn ? 'Sign-Out' : 'Sign-In' }
                 </a>
@@ -71,9 +73,11 @@ Header.defaultProps = {
   branding: 'My App'
 };
 
+
 Header.propTypes = {
   branding: PropTypes.string.isRequired
 };
+
 
 const mapStateToProps = (state) => ({
   dynamicId: state.twm_contact.dynamicId,
@@ -82,7 +86,6 @@ const mapStateToProps = (state) => ({
 });
 
 
-
 export default{
-  component: connect(mapStateToProps, {})(Header)
+  component: connect(mapStateToProps, { toggleLoginAction })(Header)
 };
