@@ -1,4 +1,4 @@
-import { DISABLE_BALANCE_ON_ADD, DISABLE_BALANCE_ON_EDIT, ALLOW_REGISTRATION } from '../Types';
+import { DISABLE_BALANCE_ON_ADD, DISABLE_BALANCE_ON_EDIT, ALLOW_REGISTRATION, CHANGE_RUNTIME_ENVIRONMENT } from '../Types';
   
   const initialState = {};
 
@@ -24,6 +24,13 @@ import { DISABLE_BALANCE_ON_ADD, DISABLE_BALANCE_ON_EDIT, ALLOW_REGISTRATION } f
         return {
           ...state,
           allowRegistration: action.ymsRegistrationValue
+        };
+
+
+      case CHANGE_RUNTIME_ENVIRONMENT:
+        return {
+          ...state,
+          runningOnProdEnvironment: action.payload
         };
 
 

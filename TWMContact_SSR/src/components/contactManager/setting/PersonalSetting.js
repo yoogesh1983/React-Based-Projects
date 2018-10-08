@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { setAllowRegistrationAction, setDisableBalanceOnAddAction, setDisableBalanceOnEditAction} from '../../../event/action/SettingsAction';
+import { setAllowRegistrationAction, setDisableBalanceOnAddAction, setDisableBalanceOnEditAction, setRunningEnvironmentAction} from '../../../event/action/SettingsAction';
 import requireAuth from '../../higherOrder/requireAuth';
 
 class Setting extends Component {
@@ -23,8 +23,12 @@ class Setting extends Component {
     this.props.setAllowRegistrationAction();
   };
 
+  changeEnvironmentSetting = () => {
+    this.props.setRunningEnvironmentAction();
+  };
+
   render() {
-    const { disableBalanceOnAdd, disableBalanceOnEdit, allowRegistration } = this.props.settings;
+    const { disableBalanceOnAdd, disableBalanceOnEdit, allowRegistration, runningOnProdEnvironment } = this.props.settings;
 
     return (
       <div>
@@ -69,6 +73,16 @@ class Setting extends Component {
                   onChange={this.disableBalanceOnEditChange.bind(this)}
                 />
               </div>
+
+              <div className="form-group">
+                <label>Running On Prod-Environment</label>{' '}
+                <input
+                  type="checkbox"
+                  name="runningOnProdEnvironment"
+                  checked={!!runningOnProdEnvironment}
+                  onChange={this.changeEnvironmentSetting.bind(this)}
+                />
+              </div>
             </form>
           </div>
         </div>
@@ -81,7 +95,8 @@ Setting.propTypes = {
   settings: PropTypes.object.isRequired,
   setDisableBalanceOnAddAction: PropTypes.func.isRequired,
   setDisableBalanceOnEditAction: PropTypes.func.isRequired,
-  setAllowRegistrationAction: PropTypes.func.isRequired
+  setAllowRegistrationAction: PropTypes.func.isRequired,
+  setRunningEnvironmentAction: PropTypes.func.isRequired
 };
 
 
@@ -93,6 +108,7 @@ const mapStateToProps = state => ({
   export default connect(mapStateToProps, 
                           { setAllowRegistrationAction, 
                             setDisableBalanceOnAddAction,
-                            setDisableBalanceOnEditAction
+                            setDisableBalanceOnEditAction,
+                            setRunningEnvironmentAction
                           }
                         )(requireAuth(Setting));

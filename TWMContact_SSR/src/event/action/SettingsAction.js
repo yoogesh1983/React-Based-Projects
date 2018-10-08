@@ -1,4 +1,4 @@
-import { DISABLE_BALANCE_ON_ADD, DISABLE_BALANCE_ON_EDIT, ALLOW_REGISTRATION } from '../Types';
+import { DISABLE_BALANCE_ON_ADD, DISABLE_BALANCE_ON_EDIT, ALLOW_REGISTRATION, CHANGE_RUNTIME_ENVIRONMENT } from '../Types';
   
   export const setDisableBalanceOnAddAction = () => {
     // Get settings from localStorage
@@ -38,6 +38,18 @@ import { DISABLE_BALANCE_ON_ADD, DISABLE_BALANCE_ON_EDIT, ALLOW_REGISTRATION } f
       type: ALLOW_REGISTRATION,
       //payload: settings.allowRegistration       -- Let's try another way
       ymsRegistrationValue: settings.allowRegistration
+    };
+  };
+
+
+  export const setRunningEnvironmentAction = () => {
+    const settings = JSON.parse(localStorage.getItem('settings'));
+    settings.runningOnProdEnvironment = !settings.runningOnProdEnvironment;
+    localStorage.setItem('settings', JSON.stringify(settings));
+
+    return {
+      type: CHANGE_RUNTIME_ENVIRONMENT,
+      payload: settings.runningOnProdEnvironment
     };
   };
   

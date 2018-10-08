@@ -5,7 +5,7 @@ const initialState = {
     contacts: {},          // contacts: [], 
     currentContact:{},
     dynamicId:{},
-    isAuthenticated: false
+    isAuthenticated: true
 };
 
 export default function(state = initialState, action){
