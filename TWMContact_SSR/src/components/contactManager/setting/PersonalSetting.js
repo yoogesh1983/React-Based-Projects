@@ -75,7 +75,7 @@ class Setting extends Component {
               </div>
 
               <div className="form-group">
-                <label>Running On Prod-Environment</label>{' '}
+                <label>Production Environment</label>{' '}
                 <input
                   type="checkbox"
                   name="runningOnProdEnvironment"
