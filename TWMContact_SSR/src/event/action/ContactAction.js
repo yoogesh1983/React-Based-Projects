@@ -22,7 +22,7 @@ export const getAllContactAction = () => async (dispatch, getState, api) => {
     }
     catch(e)
     {
-        console.log("Fetching contact failed...!!")
+        console.log("Fetching contact failed...!!" + e);
     }
  };
 
