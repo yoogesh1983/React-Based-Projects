@@ -11,9 +11,25 @@ export const getAllContactAction = () => async (dispatch, getState, api) => {
         const url = '/users';
         let res;
 
-        if(JSON.parse(localStorage.getItem('settings')).runningOnProdEnvironment === true) {res = await api.get(url);}
-        else {res = userTestData;}
-        
+        //If Running on Production Environment
+        if(JSON.parse(localStorage.getItem('settings')).runningOnProdEnvironment === true) {
+
+            res = await api.get(url).catch((error) => {
+                if(error && error.response){
+                    console.log("Fetching contact failed...!!" + error);
+                }
+                return error;
+            });
+        }
+
+
+        //Else if Running on Test Environment
+        else {
+            res = userTestData;
+        }
+
+
+        //finally dispatch the response
         dispatch({
             type: GET_CONTACTS,
             payload: res.data,
@@ -22,7 +38,7 @@ export const getAllContactAction = () => async (dispatch, getState, api) => {
     }
     catch(e)
     {
-        console.log("Fetching contact failed...!!" + e);
+        console.log("SomeThing went wrong while calling getAllContact() method...!!" + e);
     }
  };
 
