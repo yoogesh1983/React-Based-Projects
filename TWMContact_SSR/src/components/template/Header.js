@@ -24,6 +24,11 @@ class Header extends Component{
           <a href="/" className="navbar-brand">
             {branding}
           </a>
+          <a href="#" className="nav-link" onClick={ this.props.toggleLoginAction.bind(this) }>
+              <i className={ `fas  ${ isUserLoggedIn ? 'fa-sign-out-alt' : 'fa-sign-in-alt' }` }
+              /> { isUserLoggedIn ? 'Sign-Out' : 'Sign-In' }
+          </a>
+
           <div>
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
@@ -31,14 +36,6 @@ class Header extends Component{
                   <i className="fas fa-home" /> Home
                 </Link>
               </li>
-              
-              <li className="nav-item">
-                <a href="#" className="nav-link" onClick={ this.props.toggleLoginAction.bind(this) }>
-                    <i className={ `fas  ${ isUserLoggedIn ? 'fa-sign-out-alt' : 'fa-sign-in-alt' }` }
-                    /> { isUserLoggedIn ? 'Sign-Out' : 'Sign-In' }
-                </a>
-              </li>
-              
 
               <li className="nav-item">
                 <Link to="/contact/add" className="nav-link">
