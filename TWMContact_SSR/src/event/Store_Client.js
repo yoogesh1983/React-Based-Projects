@@ -2,6 +2,8 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import axios from 'axios';
 import rootReducer from './reducer';
+import log from '../event/middlewire/log';
+import stateValidator from '../event/middlewire/stateValidator';
 
 
 // Initial State Setting
@@ -17,7 +19,7 @@ initialState.twm_setting = JSON.parse(localStorage.getItem('settings'));
 const axiosInstance = axios.create({
   baseURL: '/api'
 });
-const middleware = [thunk.withExtraArgument(axiosInstance)];
+const middleware = [thunk.withExtraArgument(axiosInstance), log, stateValidator];
 
 
 //Store Creation

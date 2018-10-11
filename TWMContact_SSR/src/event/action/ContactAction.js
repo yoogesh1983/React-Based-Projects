@@ -1,7 +1,7 @@
 import axios from 'axios';
 import uuid  from 'uuid';
 import {GET_CONTACTS, GET_CONTACT, ADD_CONTACT, EDIT_CONTACT, DELETE_CONTACT, TOGGLE_LOGIN } from '../Types';
-import userTestData from '../../components/contactManager/__fixtures__/userTestData.json'; 
+import allContactTestData from '../../components/contactManager/__fixtures__/allContactTestData.json'; 
 
 
 export const getAllContactAction = () => async (dispatch, getState, api) => {
@@ -25,7 +25,7 @@ export const getAllContactAction = () => async (dispatch, getState, api) => {
 
         //Else if Running on Test Environment
         else {
-            res = userTestData;
+            res = allContactTestData;
         }
 
 
