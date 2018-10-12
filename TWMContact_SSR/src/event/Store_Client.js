@@ -8,7 +8,7 @@ import stateValidator from '../event/middlewire/stateValidator';
 
 // Initial State Setting
 if (localStorage.getItem('settings') == null) {
-    const defaultSettings = { disableBalanceOnAdd: true, disableBalanceOnEdit: false, allowRegistration: false, runningOnProdEnvironment: true };
+    const defaultSettings = { disableBalanceOnAdd: true, disableBalanceOnEdit: false, allowRegistration: false, runningOnTestEnvironment: false };
     localStorage.setItem('settings', JSON.stringify(defaultSettings));
   }
 const initialState = window.INITIAL_STATE;

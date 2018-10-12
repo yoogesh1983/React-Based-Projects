@@ -28,7 +28,7 @@ class Setting extends Component {
   };
 
   render() {
-    const { disableBalanceOnAdd, disableBalanceOnEdit, allowRegistration, runningOnProdEnvironment } = this.props.settings;
+    const { disableBalanceOnAdd, disableBalanceOnEdit, allowRegistration, runningOnTestEnvironment } = this.props.settings;
 
     return (
       <div>
@@ -75,11 +75,11 @@ class Setting extends Component {
               </div>
 
               <div className="form-group">
-                <label>Production Environment</label>{' '}
+                <label>Enable Test Environment</label>{' '}
                 <input
                   type="checkbox"
-                  name="runningOnProdEnvironment"
-                  checked={!!runningOnProdEnvironment}
+                  name="runningOnTestEnvironment"
+                  checked={!!runningOnTestEnvironment}
                   onChange={this.changeEnvironmentSetting.bind(this)}
                 />
               </div>

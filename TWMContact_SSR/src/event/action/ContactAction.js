@@ -4,30 +4,27 @@ import {GET_CONTACTS, GET_CONTACT, ADD_CONTACT, EDIT_CONTACT, DELETE_CONTACT, TO
 import allContactTestData from '../../components/contactManager/__fixtures__/allContactTestData.json'; 
 
 
-export const getAllContactAction = () => async (dispatch, getState, api) => {
-
+export const getAllContactAction = (source) => async (dispatch, getState, api) => {
+    
     try
     {
         const url = '/users';
         let res;
 
-        //If Running on Production Environment
-        if(JSON.parse(localStorage.getItem('settings')).runningOnProdEnvironment === true) {
 
+        //if Running on Test Environment
+        if(source !== 'server' && JSON.parse(localStorage.getItem('settings')).runningOnTestEnvironment === true) {
+            res = allContactTestData;
+        }
+        //Else If Running on Production Environment
+        else {
             res = await api.get(url).catch((error) => {
                 if(error && error.response){
-                    console.log("Fetching contact failed...!!" + error);
+                    console.log("Fetching contact failed...!!" + error) ;
                 }
                 return error;
             });
         }
-
-
-        //Else if Running on Test Environment
-        else {
-            res = allContactTestData;
-        }
-
 
         //finally dispatch the response
         dispatch({

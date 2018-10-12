@@ -44,12 +44,12 @@ import { DISABLE_BALANCE_ON_ADD, DISABLE_BALANCE_ON_EDIT, ALLOW_REGISTRATION, CH
 
   export const setRunningEnvironmentAction = () => {
     const settings = JSON.parse(localStorage.getItem('settings'));
-    settings.runningOnProdEnvironment = !settings.runningOnProdEnvironment;
+    settings.runningOnTestEnvironment = !settings.runningOnTestEnvironment;
     localStorage.setItem('settings', JSON.stringify(settings));
 
     return {
       type: CHANGE_RUNTIME_ENVIRONMENT,
-      payload: settings.runningOnProdEnvironment
+      payload: settings.runningOnTestEnvironment
     };
   };
   

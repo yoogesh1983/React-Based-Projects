@@ -43,7 +43,7 @@ const mapStateToProps = (state) => ({
 
 
 const loadData = (store) => {
-    return store.dispatch(getAllContactAction());
+    return store.dispatch(getAllContactAction('server'));
 };
   
 
