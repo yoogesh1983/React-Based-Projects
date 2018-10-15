@@ -5,8 +5,8 @@
   "main": "Entry.js",
   "scripts": {
     "dev": "npm-run-all --parallel dev:*",
-    "dev:build-server": "webpack --config webpack.server.js --watch",
-    "dev:build-client": "webpack --config webpack.client.js --watch",
+    "dev:build-server": "webpack --env.ENV=dev --config webpack.server.js --watch",
+    "dev:build-client": "webpack --env.ENV=dev --config webpack.client.js --watch",
     "dev:server": "nodemon --watch build --exec node build/bundle.js"
   },
   "author": "",
@@ -53,6 +53,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^1.0.0",
+    "dotenv": "^6.1.0",
     "file-loader": "^1.1.11",
     "node-sass": "^4.9.3",
     "sass-loader": "^7.1.0",

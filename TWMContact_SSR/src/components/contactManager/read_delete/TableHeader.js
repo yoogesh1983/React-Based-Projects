@@ -7,7 +7,7 @@ const TableHeader = () => {
           <table className="table table-sm table-hover table-striped">
               <thead>
                   <tr>
-                      <th>Name</th>
+                      <th>{process.env.API_URL}</th>
                       <th>Phone</th>
                       <th>Email</th>
                   </tr>
