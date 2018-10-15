@@ -67,7 +67,7 @@ class Header extends Component{
 }
 
 Header.defaultProps = {
-  branding: 'My App'
+  branding: `My App [${process.env.RUN_TIME_ENVIRONMENT}]`
 };
 
 
