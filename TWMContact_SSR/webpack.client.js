@@ -1,8 +1,6 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.config.js')
-const { DefinePlugin } = require('webpack');
-const dotenv = require('dotenv');
 
 const config = {
 
@@ -17,22 +15,10 @@ const config = {
 };
 
 
-module.exports = (env) => {
-
-    env = dotenv.config({ path: path.resolve(__dirname, 'conf', `.env.${env.ENV}`) }).parsed;
-    let mergedConfig = merge(baseConfig, config);
-
-    const envKeys = Object.keys(env).reduce((prev, next) => {
-      prev[`process.env.${next}`] = JSON.stringify(env[next]);
-      return prev;
-    }, {});
-
-    const prod = { plugins: [new DefinePlugin(envKeys)]};
-    mergedConfig = merge(mergedConfig, prod);
-
+module.exports = env => {
+    let mergedConfig = merge(baseConfig(env), config);
     return mergedConfig;
-  };
-
+}
 
 
 

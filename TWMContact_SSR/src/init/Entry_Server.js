@@ -48,5 +48,5 @@ server.get('*', (req, res) => {
 
 
 server.listen(3000, () => {
-    console.log("Server is Listening on port 3000");
+    console.log(`Server [${process.env.RUN_TIME_ENVIRONMENT}] is Listening on port 3000`);
 })
