@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TextInputGroup_ref from '../../template/TextInputGroup_ref';
+import {TextInputGroup_ref} from '../../template/Template_Common';
 import { addContactAction } from '../../../event/action/ContactAction';
 import {withRouter} from "react-router-dom";  /* requied for redirection i.e. this.props.history.push('/'); */
 import { connect } from 'react-redux';

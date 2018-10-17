@@ -1,5 +1,5 @@
 import React from 'react';
-import MetaTag from '../components/template/Meta';
+import {MetaTag} from '../components/template/Template_Common';
 
 const AboutPage =  (props) => {
   return (

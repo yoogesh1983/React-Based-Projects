@@ -1,7 +1,6 @@
 import React from 'react';
 import TableData, {loadData as load} from '../components/contactManager/read_delete/TableData';
-import TableHeader from '../components/contactManager/read_delete/TableHeader';
-import MetaTag from '../components/template/Meta';
+import {TableHeader, MetaTag} from '../components/template/Template_Common';
 
 
 const Home = () => {

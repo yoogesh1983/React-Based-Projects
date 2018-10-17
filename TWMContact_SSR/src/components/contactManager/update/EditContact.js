@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getContactAction, editContactAction }  from '../../../event/action/ContactAction';
-import TextInputGroup from '../../template/TextInputGroup';
+import {TextInputGroup} from '../../template/Template_Common';
 import {withRouter} from "react-router-dom";  /* requied for redirection i.e. this.props.history.push('/'); */
 import { connect } from 'react-redux';
 

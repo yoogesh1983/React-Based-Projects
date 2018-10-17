@@ -1,8 +1,8 @@
 import React from 'react'
-import MetaTag from '../components/template/Meta';
+import {MetaTag} from '../components/template/Template_Common';
 //import AddContact from '../components/contactManager/insert/AddContact';
-//import AddContact from '../components/contactManager/insert/AddContact_ref';
-import AddContact from '../components/contactManager/insert/AddContact_rdf';
+import AddContact from '../components/contactManager/insert/AddContact_ref';
+//import AddContact from '../components/contactManager/insert/AddContact_rdf';
 
 
 const AddPage =  () => {
