@@ -1,22 +1,14 @@
 import React from 'react'
-import{ Helmet } from 'react-helmet';
+import MetaTag from '../components/template/Meta';
 //import AddContact from '../components/contactManager/insert/AddContact';
 //import AddContact from '../components/contactManager/insert/AddContact_ref';
 import AddContact from '../components/contactManager/insert/AddContact_rdf';
 
-const header = () =>{
-  return (
-    <Helmet>
-      <title>ADD</title>
-      <meta property='og:title' content="add" />
-    </Helmet>
-  );
-}
 
 const AddPage =  () => {
   return (
       <React.Fragment>
-       {header()}
+       <MetaTag title='ADD' content="add" />
        <AddContact />
       </React.Fragment>
   );
