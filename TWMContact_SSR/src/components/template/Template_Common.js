@@ -69,6 +69,26 @@ const TableHeader = () => {
 };
 
 
+const RenderField = (field) => {
+    const error = field.meta.error;
+    const isFieldTouched = field.meta.touched;
+    const submitFailed = field.meta.submitFailed
+
+    return (
+      <div className="form-group">
+          <input type={field.type}
+                 name={field.name}
+                 placeholder={field.placeholder}
+                 className= { `form-control form-control-lg ${ isFieldTouched && error && submitFailed ? 'is-invalid' : ''}` }
+                 autoComplete={field.placeholder}
+                 {...field.input} /> 
+
+          {isFieldTouched && error && submitFailed && <div className="invalid-feedback">{error}</div>}
+      </div>
+    );
+  }
+
+
 
 /*--------------------------------------------------------*/
 TextInputGroup.propTypes = {
@@ -102,3 +122,4 @@ export {TextInputGroup};
 export {TextInputGroup_ref};
 export {MetaTag};
 export {TableHeader};
+export {RenderField};

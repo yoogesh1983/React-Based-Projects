@@ -4,8 +4,7 @@ import _ from 'lodash'
 const initialState = {       
     contacts: {},          // contacts: [], 
     currentContact:{},
-    dynamicId:{},
-    isAuthenticated: true
+    dynamicId:{}
 };
 
 export default function(state = initialState, action){
@@ -46,13 +45,7 @@ export default function(state = initialState, action){
               // contacts: state.contacts.map(contact => contact.id == action.payload.id ? (contact = action.payload) : contact) 
                contacts: {...state.contacts, [action.payload.id]:action.payload}
         };
-
-
-        case TOGGLE_LOGIN:
-        return {
-          ...state,
-          isAuthenticated: !state.isAuthenticated
-        };
+        
 
         default:
                 return state;

@@ -148,10 +148,3 @@ export const getContactAction = id => async (dispatch, getState, api) => {
 
     }
  };
-
-
- export const toggleLoginAction = () => {
-    return {
-      type: TOGGLE_LOGIN
-    };
-  };

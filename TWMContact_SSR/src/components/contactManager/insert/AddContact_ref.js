@@ -3,6 +3,7 @@ import {TextInputGroup_ref} from '../../template/Template_Common';
 import { addContactAction } from '../../../event/action/ContactAction';
 import {withRouter} from "react-router-dom";  /* requied for redirection i.e. this.props.history.push('/'); */
 import { connect } from 'react-redux';
+import requireAuth from '../../higherOrder/requireAuth';
 
 /*
   This is for Uncontrolled component where the field are comming as props
@@ -108,5 +109,5 @@ class AddContact extends Component {
   }
 }
 
-export default connect(null, {addContactAction})(withRouter(AddContact));
+export default connect(null, {addContactAction})(withRouter(requireAuth(AddContact)));
 

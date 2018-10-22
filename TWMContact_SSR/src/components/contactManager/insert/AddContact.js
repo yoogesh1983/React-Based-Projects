@@ -3,6 +3,7 @@ import { addContactAction } from '../../../event/action/ContactAction';
 import {TextInputGroup} from '../../template/Template_Common';
 import {withRouter} from "react-router-dom";  /* requied for redirection i.e. this.props.history.push('/'); */
 import { connect } from 'react-redux';
+import requireAuth from '../../higherOrder/requireAuth';
 
 /*
   This is for controlled component where you are not using Props and each input is connected to a state instead
@@ -86,4 +87,4 @@ class AddContact extends Component {
 
 }
 
-export default connect(null, {addContactAction})(withRouter(AddContact));
+export default connect(null, {addContactAction})(withRouter(requireAuth(AddContact)));

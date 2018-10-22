@@ -8,11 +8,16 @@ import stateValidator from '../event/middlewire/stateValidator';
 
 // Initial State Setting
 if (localStorage.getItem('settings') == null) {
-    const defaultSettings = { disableBalanceOnAdd: true, disableBalanceOnEdit: false, allowRegistration: false, runningOnTestEnvironment: false };
-    localStorage.setItem('settings', JSON.stringify(defaultSettings));
-  }
+  const defaultSettings = { disableBalanceOnAdd: true, disableBalanceOnEdit: false, allowRegistration: false, runningOnTestEnvironment: false, jwtToken:null };
+  localStorage.setItem('settings', JSON.stringify(defaultSettings));
+}
 const initialState = window.INITIAL_STATE;
-initialState.twm_setting = JSON.parse(localStorage.getItem('settings'));
+const initialSetting = JSON.parse(localStorage.getItem('settings'));
+initialState.twm_setting = initialSetting;
+if(initialSetting.jwtToken){
+  initialState.twm_auth.authenticationToken = initialSetting.jwtToken;
+  initialState.twm_auth.isAuthenticated = true;
+}
 
 
 //MiddleWare Setting

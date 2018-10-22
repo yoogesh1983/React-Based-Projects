@@ -6,6 +6,11 @@ export const DELETE_CONTACT = 'delete_Contacts';
 export const GET_CONTACT = 'get_Single_Contact';
 export const TOGGLE_LOGIN = 'toggle_login';
 
+
+//Auth Reducer
+export const AUTH_USER = 'auth_user';
+export const AUTH_ERROR = 'auth_error';
+
 //Setting Reducer
 export const DISABLE_BALANCE_ON_ADD = 'DISABLE_BALANCE_ON_ADD';
 export const DISABLE_BALANCE_ON_EDIT = 'DISABLE_BALANCE_ON_EDIT';

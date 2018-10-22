@@ -1,7 +1,9 @@
-import HomePage from '../pages/HomePage';
+import SigninPage from '../pages/SigninPage';
 import EditPage from '../pages/EditPage';
 import AddPage from '../pages/AddPage';
 import AboutPage from '../pages/AboutPage';
+import HomePage from '../pages/HomePage';
+import SignupPage from '../pages/SignupPage';
 import NotFoundPage from '../pages/NotFoundPage';
 import MySettingPage from '../pages/MySettingPage';
 import Header from '../components/template/Header';
@@ -16,6 +18,16 @@ export default [
             ...HomePage,
             path: '/',
             exact: true
+        },
+
+        {
+            ...SigninPage,
+            path: '/signin',
+        },
+
+        {
+            ...SignupPage,
+            path: '/signup'
         },
         
         {

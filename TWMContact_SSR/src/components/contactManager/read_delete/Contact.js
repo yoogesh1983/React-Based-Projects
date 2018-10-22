@@ -16,6 +16,7 @@ class Contact extends Component{
 
     render() {
         const { id, name, phone, email } = this.props.contact;
+        const { isUserLoggedIn } = this.props;
            return (
                     <table className="table table-sm table-hover table-striped">
                         <tbody>
@@ -23,15 +24,17 @@ class Contact extends Component{
                                 <td>{name}</td>
                                 <td>{phone}</td>
                                 <td>{email}
+                                  {isUserLoggedIn &&
+                                  <span>
                                     <i className="fas fa-times" 
                                         style={{curser: 'pointer', float: 'right', color: 'red'}}
                                         onClick={this.deleteContact.bind(this, id)} />
-                                       
 
                                     <Link to={`/contact/edit/${id}`}>
                                         <i className="fas fa-pencil-alt" 
                                             style={{ curser:'pointer', float: 'right', color:'black', marginRight:'1rem'}} />
                                     </Link>
+                                    </span>}
                                 </td>
                             </tr>
                         </tbody>
@@ -41,13 +44,11 @@ class Contact extends Component{
 
 }
 
-/* Since we not mapping anything to props, we don't need this
 
 const mapStateToProps = (state) => ({
-    contacts: state.contact.contacts
+    isUserLoggedIn: state.twm_auth.isAuthenticated
 });
 
-*/
 
 
-export default connect(null, {deleteContactAction})(Contact);
+export default connect(mapStateToProps, {deleteContactAction})(Contact);

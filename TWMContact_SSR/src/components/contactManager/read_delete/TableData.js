@@ -16,7 +16,7 @@ componentDidMount(){
 }
 
 renderContactLists(contact) {
-    return (<Contact key={contact.id} contact={contact} />); // renderContactLists = contact => <Contact key={contact.id} contact={contact} />;
+    return (<Contact key={contact.id} contact={contact} />); // renderContactLists = contact => <Contact key={contact.id} contact={contact} isUserLoggedIn={this.props.isUserLoggedIn} />;
   }
   
 
@@ -38,7 +38,8 @@ TableData.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-    contacts: state.twm_contact.contacts
+    contacts: state.twm_contact.contacts,
+    isUserLoggedIn: state.twm_auth.isAuthenticated
 });
 
 
