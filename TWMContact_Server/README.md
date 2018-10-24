@@ -11,7 +11,7 @@ http://localhost:3090/signin    [Post]
 => put "content-type"  as "application/json" on header
 => In body section, put below json :
     {
-      "email":"sushila@gmail.com",
-      "password": "aaghaz1"
+      "email":"yourname@gmail.com",
+      "password": "password"
     }
 => Now hit Send, this will create new user into a database
