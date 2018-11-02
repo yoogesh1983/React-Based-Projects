@@ -1,4 +1,5 @@
 import axios from 'axios';
+import {modifyLocalStorageSetting} from '../../components/template/Function_Common';
 import { AUTH_USER, AUTH_ERROR} from '../types';
 
 
@@ -52,8 +53,8 @@ export const signupAction = (signupForm, callback) => {
 
 //You cannot dispatch more then one action from here since you are returning Object here (Unlike function above) 
 export const signoutAction = () => {
-        setAuthTokenToLocalStorage(null);
-        return ({
+        setAuthTokenToLocalStorage(null); 
+        return ({ 
             type: AUTH_USER,
             payload: null,
             isAuthenticated: false
@@ -61,9 +62,6 @@ export const signoutAction = () => {
 }
 
 
-const setAuthTokenToLocalStorage = data => {
-    const settings = JSON.parse(localStorage.getItem('settings'));
-    settings.jwtToken = data;
-    localStorage.setItem('settings', JSON.stringify(settings));
-}
+const setAuthTokenToLocalStorage = tokenValue => modifyLocalStorageSetting('jwtToken', tokenValue, false);
+
 
