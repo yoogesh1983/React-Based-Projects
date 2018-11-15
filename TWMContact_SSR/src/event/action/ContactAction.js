@@ -35,7 +35,7 @@ export const getAllContactAction = (source) => async (dispatch, getState, api) =
     }
     catch(e)
     {
-        console.log("SomeThing went wrong while calling getAllContact() method...!!" + e);
+        console.log("SomeThing went wrong while calling getAllContact() method...!! Check whether you are in test environment..!!" + e);
     }
  };
 
