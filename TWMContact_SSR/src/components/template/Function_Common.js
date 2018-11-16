@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 //This method is used for form to insert input field
 export const renderField = (field) => {
   const error = field.meta.error;
@@ -23,13 +22,17 @@ export const renderField = (field) => {
 
 
 //This is actual validation for signInForm and signUpForm
-export const validateForm = (inputform) => {
+export const validateForm = inputform => {
   const errors = {};
   const { email, password} = inputform;
   const requiredFields = ['email', 'password'];
 
    /* Check required fields */
-   checkRequiredFields(requiredFields, inputform, errors);
+   requiredFields.forEach(index => {
+    if(!inputform[index]){
+     errors[index] = 'This is a required field';
+    }
+   })
 
    /* Email-address Validation */
     if(email){
@@ -55,22 +58,6 @@ export const modifyLocalStorageSetting = (param, value, toggleable) => {
   localStorage.setItem('settings', JSON.stringify(settings));
   return settings;
 };
-
-
-//This method is required while validating form fields
-const checkRequiredFields = (arr, values, errors) => {
-  arr.forEach(f => {
-    const reqMsg = required(values[f]);
-    if (reqMsg) {
-      errors[f] = reqMsg;
-    }
-  });
-}
-
-const required = (val) => {
-  if (!val) return 'This is a required field';
-  return undefined;
-}
 
 
 //This method is used to validate email address field
