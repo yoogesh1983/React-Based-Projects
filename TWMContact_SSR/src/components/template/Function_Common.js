@@ -1,6 +1,6 @@
 import React from 'react';
 
-//This method is used for form to insert input field
+//This method is used for Redux-form to insert input field
 export const renderField = (field) => {
   const error = field.meta.error;
   const isFieldTouched = field.meta.touched;
