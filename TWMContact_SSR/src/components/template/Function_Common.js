@@ -35,12 +35,10 @@ export const validateForm = inputform => {
    })
 
    /* Email-address Validation */
-    if(email){
-        const emailErrorMsg = validateEmailAddress(email);
-        if(emailErrorMsg){
-            errors.email = emailErrorMsg;
-        }
+    if(email && !(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email))){
+      errors.email = 'Please enter a valid email address containing an "@" and "." symbol.';   
     }
+
   return errors;
 };
 
@@ -58,10 +56,3 @@ export const modifyLocalStorageSetting = (param, value, toggleable) => {
   localStorage.setItem('settings', JSON.stringify(settings));
   return settings;
 };
-
-
-//This method is used to validate email address field
-const validateEmailAddress = (email) => {
-  const valid = (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email));
-  return !valid ? 'Please enter a valid email address containing an "@" and "." symbol.' : '';
-}
