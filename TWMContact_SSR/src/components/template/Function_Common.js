@@ -1,19 +1,19 @@
 import React from 'react';
 
 //This method is used for Redux-form to insert input field
-export const renderField = (field) => {
-  const error = field.meta.error;
-  const isFieldTouched = field.meta.touched;
-  const submitFailed = field.meta.submitFailed
+export const renderField = (props) => {
+  const error = props.meta.error;
+  const isFieldTouched = props.meta.touched;
+  const submitFailed = props.meta.submitFailed
 
   return (
     <div className="form-group">
-        <input type={field.type}
-               name={field.name}
-               placeholder={field.placeholder}
+        <input type={props.type}
+               name={props.name}
+               placeholder={props.placeholder}
                className= { `form-control form-control-lg ${ isFieldTouched && error && submitFailed ? 'is-invalid' : ''}` }
-               autoComplete={field.placeholder}
-               {...field.input} /> 
+               autoComplete={props.placeholder}
+               {...props.input} /> 
 
         {isFieldTouched && error && submitFailed && <div className="invalid-feedback">{error}</div>}
     </div>

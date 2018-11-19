@@ -15,7 +15,9 @@ class AddContact extends Component {
     super(props);
 
     //we will set this state by a rest call which happens as soon as the component will mount
-    state: { title:''};
+    this.state = { 
+      title:''
+    };
 
     this.idInput = React.createRef();
     this.nameInput = React.createRef();
