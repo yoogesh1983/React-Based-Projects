@@ -22,9 +22,6 @@ Do the folloiwng steps to run it on PostMan: </br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} </br>
 >Now hit Send, this will create new user into a database </br>
 
-
-
-
 # How to clone a project (Using VisualStudio Code) </br>
 > Ctrl+Shift+p </br>
 > git clone </br>
