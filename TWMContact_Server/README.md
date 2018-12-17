@@ -21,14 +21,3 @@ Do the folloiwng steps to run it on PostMan: </br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"password": "password" </br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} </br>
 >Now hit Send, this will create new user into a database </br>
-
-# How to clone a project (Using VisualStudio Code) </br>
-> Ctrl+Shift+p </br>
-> git clone </br>
-> Enter a URL </br>
-> select a folder you want to save the the project into your local</br>
-> Close the project from Visual code and again open the particular project inside the folder i.e. TWMCONTACT_SSR </br>
-
-Run a following command to commit git from visualcode (Otherwise it will not show the username password modal popup) </br>
-> git config --global user.email "yoogesh1983@gmail.com" </br>
-> git config --global user.name "Yoogesh"</br>
