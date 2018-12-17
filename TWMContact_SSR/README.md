@@ -1,6 +1,6 @@
 # What is the Application about? </br>
-- This is a <b>Server-side-rendered</b> React Application that uses <b>REDUX</b> as a State Management tool. </br>
-- This application creates single bundle.js but does not generate bundle for CSS files for which reason you cannot use your own css styles and you need to reley on BootStrap that renders on ClientSide on Entry_Client.js and/or Index.js under "init" folder.</br>
+- This is a <b>Server-side-rendered</b> React Application that uses <b>REDUX</b> as a State Management tool </br>
+- This application creates single bundle.js but does not generate bundle for CSS files for which reason you cannot use your own css styles and you need to reley on BootStrap that renders on ClientSide on Entry_Client.js and/or Index.js under "init" folder</br>
 - Since it generates a single bundle.js for all javaScript files, browser needs to download the whole bundle even if a single line of the file needs to be read
 
 
