@@ -64,5 +64,7 @@ module.exports = env => {
   {
     console.log('NO bundle-assets.json, retry.');
   }
+
+  //Finally return mergedConfig
   return mergedConfig;
 };

@@ -9,7 +9,7 @@ const config = {
     target: 'node',
 
     //Setting the entry point 
-      entry: ['babel-polyfill', './src/init/Entry_Server.js'],
+    entry: ['babel-polyfill', './src/init/Entry_Server.js'],
       
     //output file of the bundle.js
     output:{
