@@ -5,4 +5,4 @@
 > npm install </br>
 > npm run dev </br>
 
-&nbsp;You can now browse the application at http://localhost:8080/
+The application can now be browsed at http://localhost:8080/
