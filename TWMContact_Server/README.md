@@ -1,6 +1,6 @@
 # What is the Application about? </br>
 - This is totally a ServerSide Node.js Project that is used for Tokanization for Logged-in user </br>
-- This application assumes the Mongo-DB already installed in your machine, so make sure to install in before running the application </br>
+- This application assumes the Mongo-DB already installed in your machine, so make sure to install it before running the application </br>
 
 # How to run the Application? </br>
 > npm install </br>
