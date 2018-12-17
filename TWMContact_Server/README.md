@@ -9,18 +9,17 @@
 The application can now be browsed at following: </br>
 > http://localhost:3090 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Get] </br>
 > http://localhost:3090/signup &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [Post] </br>
-> http://localhost:3090/signin  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  [Post]
+> http://localhost:3090/signin  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  [Post] </br>
 
-
-
-=> Go to postman and give url "http://localhost:3090/signup"
-=> put "content-type"  as "application/json" on header
-=> In body section, put below json :
-    {
-      "email":"yourname@gmail.com",
-      "password": "password"
-    }
-=> Now hit Send, this will create new user into a database
+Do the folloiwng steps to run it on PostMan: </br>
+> Go to postman and give url http://localhost:3090/signup </br>
+> Put "content-type"  as "application/json" on header </br>
+> In body section, put below json : </br>
+    { </br>
+      "email":"yourname@gmail.com", </br>
+      "password": "password" </br>
+    } </br>
+>Now hit Send, this will create new user into a database </br>
 
 
 
