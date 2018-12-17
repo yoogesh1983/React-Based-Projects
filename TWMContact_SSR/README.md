@@ -1,3 +1,16 @@
+# What is the Application about? </br>
+&nbsp;=> This is a <b>Server-side-rendered</b> React Application that uses <b>REDUX</b> as a State Management tool. </br>
+&nbsp;=> This application creates single bundle.js but does not generate bundle for CSS files for which reason you cannot use your own css styles and you need to reley on BootStrap that renders on ClientSide on Entry_Client.js and/or </br>
+
+# How to run the Application? </br>
+> npm install </br>
+> npm run dev </br>
+
+The application can now be browsed at http://localhost:8080/
+
+
+
+
 #Steps to Run </br>
 ############</br>
 => npm install </br>
