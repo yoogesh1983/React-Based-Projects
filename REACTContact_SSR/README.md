@@ -6,7 +6,7 @@
 # How to run the Application? </br>
 > npm install </br>
 > npm run dev </br>
-> if first time, close the server by using ctrl+C and re-do > npm run dev (Since css will not update firsttime. Bug!!) </br>
+> if first time, close the server by using ctrl+C and do "npm run dev" again(Since css will not update firsttime. Bug!!) </br>
 
 The application can now be browsed at http://localhost:3000/ </br>
 
