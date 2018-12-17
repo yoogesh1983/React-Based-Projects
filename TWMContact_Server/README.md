@@ -13,6 +13,7 @@ The application can now be browsed at following: </br>
 
 Do the folloiwng steps to run it on PostMan: </br>
 > Go to postman and give url http://localhost:3090/signup </br>
+> Choose Post </br>
 > Put "content-type"  as "application/json" on header </br>
 > In body section, put below json : </br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ </br>
