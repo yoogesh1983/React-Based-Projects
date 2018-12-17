@@ -15,10 +15,10 @@ Do the folloiwng steps to run it on PostMan: </br>
 > Go to postman and give url http://localhost:3090/signup </br>
 > Put "content-type"  as "application/json" on header </br>
 > In body section, put below json : </br>
-    { </br>
-      "email":"yourname@gmail.com", </br>
-      "password": "password" </br>
-    } </br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{ </br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"email":"yourname@gmail.com", </br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"password": "password" </br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} </br>
 >Now hit Send, this will create new user into a database </br>
 
 
