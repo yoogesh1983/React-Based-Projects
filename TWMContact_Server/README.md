@@ -21,3 +21,7 @@ Do the folloiwng steps to run it on PostMan: </br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"password": "password" </br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} </br>
 >Now hit Send, this will create new user into a database </br>
+
+# How to install Mango DB? </br>
+> Download and install MongoDB  </br>
+> Install robo3T (formally known as roboMango) for UI tool for MongoDB </br>
