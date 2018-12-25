@@ -4,6 +4,8 @@ import { AUTH_EVENT} from '../types';
 
 
 export const signinAction = (signinForm, callback) => async (dispatch: AUTH_EVENT => void, getState: any, api:any)=>{
+
+    console.log("Current State :", getState());
     try {
             //const response = await axios.post(`${process.env.AUTH_API_URL}/signin`, signinForm);
             dispatch({
