@@ -15,7 +15,8 @@ export default function(state = initialState, action){
                 return { 
                     ...state,        
                     contacts: _.mapKeys(action.payload, 'id'),      //contacts: action.payload, 
-                    dynamicId: action.dynamicId
+                    dynamicId: action.dynamicId,
+                    updatedAt: action.LOG_TIME,                    // This value is comming from our own middleare log.js
         };
         
         case GET_CONTACT:
