@@ -12,12 +12,44 @@ class Signin extends Component {
         super(props);
     };
 
+    componentDidMount() {
+        this.handleInitialize();
+        const updatedFormObj = { 
+            email: 'yoogesh2002@yahoo.com',
+            password: 'updatedPassword',
+        }
+        this.updateFormValue(updatedFormObj)
+    }
+      
+    handleInitialize() {
+        const { signInForm } = this.props;
+        signInForm.email = 'syoogesh@gmail.com';
+        signInForm.password = 'initialPassword';
+        this.props.initialize(this.initializeData(signInForm));
+   } 
+
+   initializeData(signInForm) {
+       if (!signInForm) return {};
+       
+       const obj = {
+           email: signInForm.email,
+           password: signInForm.password,
+        };
+        return obj;
+    }
     
+    updateFormValue(formObj) {
+        Object.keys(formObj).forEach(index => this.updateFormField(index, formObj[index]));
+    }
+
+    updateFormField(formValueName, value = '') {
+        this.props.change(formValueName, value);
+    }
+
    onSubmit = (signinForm) => {
      this.props.signinAction(signinForm, () => this.props.history.push('/'));
    };
 
-   
     render(){
         const { handleSubmit } = this.props;
         return (
@@ -35,15 +67,19 @@ class Signin extends Component {
     }
 }
 
-
-const mapStateTOProps = state => ({
-        errorMessage: state.twm_auth.errorMessage
-});
+const mapStateToProps = state => {
+    const { signIn } = state.form;
+    const {errorMessage } = state.twm_auth;
+    return {
+        signInForm: signIn || {},
+        errorMessage,
+    };
+  };
 
     
 export default compose(
-    connect(mapStateTOProps, {signinAction}),
-    reduxForm({validate: validateForm, form: 'SignInForm' })
+    connect(mapStateToProps, {signinAction}),
+    reduxForm({validate: validateForm, form: 'signIn' })
 )(withRouter(Signin))
 
 
