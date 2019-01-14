@@ -1,7 +1,7 @@
 # What is the Application about? </br>
 - This is a <b>Server-side-rendered</b> React Application that uses <b>REDUX</b> as a State Management tool </br>
 - This application creates chunks of js and css files when compile </br>
-- Unlike TWMContact_SSR , You can use your own css styles here. You can also use third party css library like Bootstrap here, but for that you need to pass css via Index.js under "init" folder (which is done here) and may get issue when try to use via ClientSide i.e. from Entry_Client.js (Which you could do in TWMContact_SSR) </br>
+- Unlike YMSContact_SSR , You can use your own css styles here. You can also use third party css library like Bootstrap here, but for that you need to pass css via Index.js under "init" folder (which is done here) and may get issue when try to use via ClientSide i.e. from Entry_Client.js (Which you could do in YMSContact_SSR) </br>
 
 # How to run the Application? </br>
 > npm install </br>
