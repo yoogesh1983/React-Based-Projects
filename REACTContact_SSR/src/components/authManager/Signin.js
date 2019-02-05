@@ -4,7 +4,8 @@ import { compose } from 'redux';
 import {withRouter} from "react-router-dom";
 import { connect } from 'react-redux';
 import { signinAction } from '../../event/action/AuthAction';
-import { renderField, validateForm } from '../template/Function_Common';
+import { validateForm, OnlyNums } from '../template/Function_Common';
+import TextInput from '../template/TextInput';
 
 class Signin extends Component {
 
@@ -17,6 +18,7 @@ class Signin extends Component {
         const updatedFormObj = { 
             email: 'yoogesh2002@yahoo.com',
             password: 'updatedPassword',
+            phone:'7137322412'
         }
         this.updateFormValue(updatedFormObj)
     }
@@ -25,6 +27,7 @@ class Signin extends Component {
         const { signInForm } = this.props;
         signInForm.email = 'syoogesh@gmail.com';
         signInForm.password = 'initialPassword';
+        signInForm.password = '8327628913';
         this.props.initialize(this.initializeData(signInForm));
    } 
 
@@ -57,8 +60,11 @@ class Signin extends Component {
               <div className="card-header">{this.props.errorMessage ? <span>{this.props.errorMessage.toUpperCase()}</span> : 'SIGN-IN'}</div>
                 <div className="card-body">
                   <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-                   <Field type="email" name="email" placeholder="Enter email" autoComplete="none" component={renderField} />
-                   <Field type="password" name="password" placeholder="Enter password" autoComplete="none" component={renderField} />
+                   <Field type="email" name="email" placeholder="Enter email" autoComplete="none" component={TextInput} />
+                   <Field type="tel" name="phone" placeholder="Enter Phone" autoComplete="none" normalize={OnlyNums} component={TextInput} />
+                   <Field type="password" name="password" placeholder="Enter password" autoComplete="none" component={TextInput} />
+                   <Field type="checkbox" name="rememberMe" placeholder="Remember Me" autoComplete="none" component={TextInput} />
+
                    <input type="submit" value="Signin" className="btn btn-block btn-success" />
                   </form>
               </div>
@@ -68,11 +74,12 @@ class Signin extends Component {
 }
 
 const mapStateToProps = state => {
-    const { signIn } = state.form;
+    const { signIn: { values = {}, syncErrors = {} } = {} } = state.form;
     const {errorMessage } = state.twm_auth;
     return {
-        signInForm: signIn || {},
+        signInForm: values,
         errorMessage,
+        formErrors: syncErrors,
     };
   };
 
