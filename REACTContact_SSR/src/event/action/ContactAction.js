@@ -75,7 +75,7 @@ export const getContactAction = id => async (dispatch, getState, api) => {
             name,                  //name : name
             phone,                 // phone : phone
             email                  // email : email
-        }
+        };
 
         const url = 'https://jsonplaceholder.typicode.com/users';
         const res = await axios.post(url, newContact);
