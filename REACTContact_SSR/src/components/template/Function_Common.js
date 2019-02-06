@@ -1,6 +1,6 @@
 import React from 'react';
 
-//This method is used for Redux-form to insert input field
+//This method is used for Redux-form to insert input field. It is used at Signup form currently
 export const renderField = (props) => {
   const error = props.meta.error;
   const isFieldTouched = props.meta.touched;
@@ -11,9 +11,10 @@ export const renderField = (props) => {
         <input type={props.type}
                name={props.name}
                placeholder={props.placeholder}
-               className= { `form-control form-control-lg ${ isFieldTouched && error && submitFailed ? 'is-invalid' : ''}` }
+               normalize={props.normalize}
+               className= { `${props.type !== 'checkbox' ? 'form-control form-control-lg' : '' } ${ isFieldTouched && error && submitFailed ? 'is-invalid' : ''}` }
                autoComplete={props.placeholder}
-               {...props.input} /> 
+               {...props.input} /> {props.type === 'checkbox' ? 'RememberMe' : ''}
 
         {isFieldTouched && error && submitFailed && <div className="invalid-feedback">{error}</div>}
     </div>
@@ -24,8 +25,8 @@ export const renderField = (props) => {
 //This is actual validation for signInForm and signUpForm
 export const validateForm = inputform => {
   const errors = {};
-  const { email, password} = inputform;
-  const requiredFields = ['email', 'password'];
+  const { email, password, phone} = inputform;
+  const requiredFields = ['email', 'password', 'phone'];
 
    /* Check required fields */
    requiredFields.forEach(index => {
@@ -42,6 +43,9 @@ export const validateForm = inputform => {
   return errors;
 };
 
+export const OnlyNums = function OnlyNums(str) {
+  return str.replace(/[^\d]/g, '');
+};
 
 //This method is used to modify the localStorage Setting
 export const modifyLocalStorageSetting = (param, value, toggleable) => {
