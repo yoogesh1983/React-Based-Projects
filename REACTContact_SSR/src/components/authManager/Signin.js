@@ -27,7 +27,7 @@ class Signin extends Component {
         const { signInForm } = this.props;
         signInForm.email = 'syoogesh@gmail.com';
         signInForm.password = 'initialPassword';
-        signInForm.password = '8327628913';
+        signInForm.phone = '8327628913';
         this.props.initialize(this.initializeData(signInForm));
    } 
 
@@ -88,9 +88,3 @@ export default compose(
     connect(mapStateToProps, {signinAction}),
     reduxForm({validate: validateForm, form: 'signIn' })
 )(withRouter(Signin))
-
-
-
-
-
-
