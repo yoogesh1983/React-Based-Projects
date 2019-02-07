@@ -29,11 +29,12 @@ server.get('*', (req, res) => {
     Promise.all(promishes).then(() => {
         
         const context = {};
-        const htmlConent = renderToString(<Provider store={store}>
+        const htmlContent = renderToString(<Provider store={store}>
             <StaticRouter location={req.path} context={context}>
                 <div>{renderRoutes(Route)}</div>
             </StaticRouter>
          </Provider>);
+        const content = redirect(htmlContent, store, req);
 
          if(context.url){
             return res.redirect(301, context.url);
@@ -42,7 +43,12 @@ server.get('*', (req, res) => {
          if(context.notFound){
              res.status(404);
          }
-         res.send(redirect(htmlConent, store));       
+
+         if (res.statusCode !== 200) {
+            res.set('Surrogate-Control', 'no-cache, no-store, must-revalidate');
+        }
+
+         res.send(content);       
     });
 })
 
