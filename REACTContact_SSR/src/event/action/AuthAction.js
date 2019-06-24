@@ -2,7 +2,7 @@ import axios from 'axios';
 import {modifyLocalStorageSetting} from '../../components/template/Function_Common';
 import { AUTH_EVENT} from '../types';
 
-
+//This is as exact as signupAction, which tells you what's going under the hood and why it is different then signoutAction
 export const signinAction = (signinForm, callback) => async (dispatch: AUTH_EVENT => void, getState: any, api:any)=>{
 
     console.log("Current State :", getState());
