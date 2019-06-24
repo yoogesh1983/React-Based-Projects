@@ -53,7 +53,7 @@ export const signupAction = (signupForm, callback) => {
 }
 
 
-//You cannot dispatch more then one action from here since you are returning Object here (Unlike function above) 
+//You cannot dispatch more then one action from here since you are returning Object here (Unlike function above. Make sure Thunk gives you an option to return function which is not possible in promise) 
 export const signoutAction = () => {
         setAuthTokenToLocalStorage(null); 
         return ({ 
